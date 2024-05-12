@@ -1,0 +1,170 @@
+:root {
+  --background: #0d1117;
+  --text: #e6edf3;
+  --outline: #30363d;
+  --alt-text: #848d97;
+  --link: #2f81f7;
+  --button: #238636;
+  --secondary: #161b22;
+  --font-family: Consolas;
+}
+
+body, html {
+  background-color: var(--background);
+  font-family: var(--font-family);
+}
+
+@font-face {
+  font-family: SegoeIcons;
+  src:url("Assets/Segoe_Fluent_Icons.ttf");
+}
+
+@font-face {
+font-family: Consolas;
+src:url("Assets/consola.ttf");
+}
+
+::placeholder {
+  color: var(--alt-text);
+}
+
+.command {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+  border-top: 1px solid var(--outline);
+  background-color: var(--background);
+}
+
+#input {
+  position: relative;
+  width: 75%;
+  height: 40px;
+  top: 10px;
+  left: 20px;
+  padding-left: 10px;
+  background-color: var(--background);
+  border: 1px solid var(--outline);
+  border-radius: 10px;
+  font-size: 13pt;
+  outline: none;
+  color: var(--text);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  border-bottom: 1px solid var(--outline);
+  background-color: var(--background);
+}
+
+#menu {
+  position: relative;
+  left: 0px;
+  top: 10px;
+  font-family: SegoeIcons;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  color: var(--alt-text);
+  font-size: 16pt;
+  border: none;
+}
+
+#run {
+  position: relative;
+  left: 68%;
+  top: 10px;
+  font-family: SegoeIcons;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  color: var(--alt-text);
+  font-size: 16pt;
+  border: none;
+}
+
+#dbg {
+  position: relative;
+  left: 68%;
+  top: 10px;
+  font-family: SegoeIcons;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  color: rgb(205, 130, 255);
+  font-size: 16pt;
+  border: none;
+}
+
+#send {
+  position: relative;
+  left: 15px;
+  top: 20px;
+  font-family: SegoeIcons;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  color: rgb(205, 130, 255);
+  font-size: 20pt;
+  border: none;
+  transform: rotate(-90deg);
+}
+
+#textcontainer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  height: 93%;
+  width: 100%;
+  display: block;
+  font-family: Consolas, "Courier New", Courier, monospace;
+  background-color: var(--background);
+  z-index: -5;
+  border: none;
+  overflow-y: hidden;
+  }
+  
+  #editor {
+  position: absolute;
+  top: 0px;
+  left: 50px;
+  height: 100%;
+  width: 100%;
+  background-color: var(--background);
+  color: var(--text);
+  font-size: 12pt;
+  outline: none;
+  border: none;
+  resize: none;
+  padding-left: 5px;
+  padding-top: 10px;
+  display: block;
+  font-family: Consolas, 'Courier New', Courier, monospace;
+  }
+  
+  #numbers {
+  position: absolute;
+  width: 20px;
+  left: 0px;
+  top: 0;
+  font-size: 12pt;
+  padding-top: 10px;
+  text-align: right;
+  font-family: Consolas, 'Courier New', Courier, monospace;
+  }
+  
+  #numbers span {
+  counter-increment: linenumber;
+  }
+  
+  #numbers span::before {
+  content: counter(linenumber);
+  display: block;
+  color: var(--alt-text);
+  }  
