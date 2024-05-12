@@ -63,19 +63,6 @@ header {
   background-color: var(--background);
 }
 
-#menu {
-  position: relative;
-  left: 0px;
-  top: 10px;
-  font-family: SegoeIcons;
-  background-color: transparent;
-  width: 30px;
-  height: 30px;
-  color: var(--alt-text);
-  font-size: 16pt;
-  border: none;
-}
-
 #run {
   position: relative;
   left: 68%;
@@ -91,13 +78,26 @@ header {
 
 #dbg {
   position: relative;
-  left: 68%;
+  left: 70%;
   top: 10px;
   font-family: SegoeIcons;
   background-color: transparent;
   width: 30px;
   height: 30px;
-  color: rgb(205, 130, 255);
+  color: #9e74ff;
+  font-size: 16pt;
+  border: none;
+}
+
+#status {
+  position: relative;
+  left: 72%;
+  top: 5px;
+  font-family: SegoeIcons;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  color: var(--outline);
   font-size: 16pt;
   border: none;
 }
@@ -110,10 +110,9 @@ header {
   background-color: transparent;
   width: 40px;
   height: 40px;
-  color: rgb(205, 130, 255);
+  color: #9e74ff;
   font-size: 20pt;
   border: none;
-  transform: rotate(-90deg);
 }
 
 #textcontainer {
@@ -131,8 +130,8 @@ header {
   }
   
   #editor {
-  position: absolute;
-  top: 0px;
+  position: fixed;
+  top: 50px;
   left: 50px;
   height: 100%;
   width: 100%;
@@ -149,10 +148,10 @@ header {
   }
   
   #numbers {
-  position: absolute;
+  position: fixed;
   width: 20px;
   left: 0px;
-  top: 0;
+  top: 50px;
   font-size: 12pt;
   padding-top: 10px;
   text-align: right;
