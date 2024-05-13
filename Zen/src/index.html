@@ -5,11 +5,11 @@
     <link rel="stylesheet" href="styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zen</title>
-    <script type="module" src="/main.js" defer></script>
   </head>
   <body>
     <header>
       <button id="dbg"><span id="status">&#xF83F;</span>&#xEBE8;</button>
+      <button id="refresh" unselectable>&#xE72C;</button>
       <button id="run" unselectable>&#xE768;</button>
     </header>
     <textarea id="consol"></textarea>
@@ -17,11 +17,12 @@
       <div id="numbers">
         <span></span>
       </div>
-      <textarea id="editor" spellcheck="false" readonly placeholder="//Code"></textarea>
+      <div id="editor" spellcheck="false" readonly placeholder="//Code"></div>
     </div>
     <div class="command">
-      <input type="text" id="input" placeholder="Input">
+      <input type="text" id="input" placeholder="Input" autocapitalize="off" spellcheck="false" autocomplete="off">
       <button id="send">&#xE724;</button>
     </div>
+    <script type="module" src="/main.js" async defer></script>
   </body>
 </html>

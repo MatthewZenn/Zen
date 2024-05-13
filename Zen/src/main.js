@@ -8,19 +8,18 @@ var check = 0;
 var errs = [];
 
 console.log = function(message) {
-  consol.value = message+"\n";
+  consol.value += message+"\n";
 };
 
 document.getElementById('send').addEventListener('click', () => {
   if (input.value != '') {
     if (input.value == "cls" | input.value == "Cls") {
       document.getElementById("status").style.color = "#30363d";
-      editor.value = '';
       input.value = '';
       consol.value = '';
     }
     else {
-      editor.value += input.value+'\n';
+      editor.innerHTML += input.value+'\n';
       input.value = '';
       input.focus();
     }
@@ -30,17 +29,20 @@ document.getElementById('send').addEventListener('click', () => {
   }
 });
 
+document.getElementById('refresh').addEventListener('click', () => {
+  window.location.reload();
+});
+
 input.addEventListener("keydown", (ev) => {
   if (ev.key === "Enter") {
     if (input.value != '') {
       if (input.value == "cls" | input.value == "Cls") {
         document.getElementById("status").style.color = "#30363d";
-        editor.value = '';
         input.value = '';
         consol.value = '';
       }
       else {
-        editor.value += input.value+'\n';
+        editor.innerHTML += input.value+'\n';
         input.value = '';
       }
     }
@@ -50,33 +52,15 @@ input.addEventListener("keydown", (ev) => {
   }
 });
 
-editor.addEventListener("change", (e) => {
-  const num = e.target.value.split("\n").length;
-  numbers.innerHTML = Array(num).fill("<span></span>").join("");
-});
-
-editor.addEventListener("keydown", (event) => {
-  if (event.key === "Tab") {
-    const start = editor.selectionStart;
-    const end = editor.selectionEnd;
-    editor.value =
-      editor.value.substring(0, start) +
-      "\t" +
-      editor.value.substring(end);
-    event.preventDefault();
-  }
-});
-
 document.getElementById('run').addEventListener('click', function() {
   consol.value = '';
   errs = [];
   document.getElementById("status").style.color = "#30363d";
   window.addEventListener("error", errorlog);
-  eval(editor.value);
+  eval(editor.innerHTML);
 
   if(consol.value != '') {
     document.getElementById("status").style.color = "#28ff82";
-
   }
 
   function errorlog(Error) {
@@ -101,5 +85,22 @@ document.getElementById('dbg').addEventListener('click', () => {
     consol.style.display = 'none';
     document.getElementById('dbg').style.color = "#848d97";
     check = 0;
+  }
+});
+
+input.addEventListener("keyup", () => {
+  const num = editor.innerHTML.split("\n").length;
+  numbers.innerHTML = Array(num).fill("<span></span>").join("");
+});
+
+editor.addEventListener("keydown", (event) => {
+  if (event.key === "Tab") {
+    const start = editor.selectionStart;
+    const end = editor.selectionEnd;
+    editor.innerHTML =
+      editor.innerHTML.substring(0, start) +
+      "\t" +
+      editor.innerHTML.substring(end);
+    event.preventDefault();
   }
 });
