@@ -5,6 +5,7 @@ const numbers = document.getElementById("numbers");
 const consol = document.getElementById('consol');
 
 var check = 0;
+var z = 0;
 var errs = [];
 
 console.log = function(message) {
@@ -28,12 +29,7 @@ document.getElementById('send').addEventListener('click', () => {
     return
   }
 });
-
-document.getElementById('logo').addEventListener('click', () => {
-  window.location.reload();
-});
-
-document.getElementById('refresh').addEventListener('click', () => {
+document.getElementById('reload').addEventListener('click', () => {
   window.location.reload();
 });
 
@@ -106,5 +102,16 @@ editor.addEventListener("keydown", (event) => {
       "\t" +
       editor.innerHTML.substring(end);
     event.preventDefault();
+  }
+});
+
+document.getElementById("logo").addEventListener('click', function() {
+  if (z == 0) {
+    document.getElementById("panel").style.display = "block"
+    z = 1;
+  }
+  else {
+    document.getElementById("panel").style.display = "none"
+    z = 0;
   }
 });

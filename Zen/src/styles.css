@@ -207,3 +207,26 @@ header {
   font-family: Consolas;
   color: var(--alt-text);
 }
+
+#panel {
+  width: 150px;
+  height: auto;
+  position: fixed;
+  top: 60px;
+  left: 5px;
+  background-color: var(--secondary);
+  border: 1px solid var(--outline);
+  border-radius: 5px;
+  display: none;
+}
+
+li {
+  color: var(--alt-text);
+  text-decoration: none;
+  font-family: SegoeIcons;
+  font-size: 12pt;
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+}
