@@ -29,6 +29,10 @@ document.getElementById('send').addEventListener('click', () => {
   }
 });
 
+document.getElementById('logo').addEventListener('click', () => {
+  window.location.reload();
+});
+
 document.getElementById('refresh').addEventListener('click', () => {
   window.location.reload();
 });
