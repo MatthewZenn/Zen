@@ -230,3 +230,8 @@ li {
   margin: 0;
   padding: 10px;
 }
+
+a {
+  color: var(--alt-text);
+  text-decoration: none;
+}
