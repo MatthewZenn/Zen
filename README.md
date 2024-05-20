@@ -2,4 +2,4 @@
 # Project Zen
 An experimental Javascript editor and terminal for mobile platforms.
 
-<img src="Zen/src/assets/Screenshot.jpg" width="500px">
+<img src="Zen/src/assets/Screenshot.jpg" width="300px">
