@@ -33,11 +33,11 @@ document.getElementById('reload').addEventListener('click', () => {
   window.location.reload();
 });
 
-input.addEventListener('focus', () => {
+input.addEventListener('focus', function() {
   document.getElementById('command').style.bottom = "310px";
 });
 
-input.addEventListener('blur', () => {
+input.addEventListener('blur', function() {
   document.getElementById('command').style.bottom = "0px";
 });
 

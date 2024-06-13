@@ -9,9 +9,9 @@
   <body>
     <header>
       <img src="assets/logo.png" id="logo">
-      <button id="dbg"><span id="status">&#xF83F;</span>&#xEBE8;</button>
+      <button id="dbg" unselectable><span id="status">&#xF83F;</span>&#xEBE8;</button>
       <button id="refresh">&#xF4A5;</button>
-      <button id="run">&#xE768;</button>
+      <button id="run" unselectable>&#xE768;</button>
     </header>
     <div id="panel">
       <li>&#xE946; About</li>
@@ -27,8 +27,8 @@
     </div>
     <div id="command">
       <input type="text" id="input" placeholder="Input" autocapitalize="off" spellcheck="false" autocomplete="off">
-      <button id="send">&#xE724;</button>
+      <button id="send" unselectable unselectable>&#xE724;</button>
     </div>
-    <scriptsrc="js/index.js" async defer></script>
+    <script src="js/index.js" async defer></script>
   </body>
 </html>

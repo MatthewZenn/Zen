@@ -2,4 +2,4 @@
 # Project Mobius
 An experimental Javascript editor and terminal for mobile platforms.
 
-<img src="Zen/src/assets/Screenshot.jpg" width="300px">
+<img src="Mobius/www/assets/Screenshot.jpg" width="300px">

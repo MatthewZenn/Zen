@@ -36,6 +36,7 @@ src:url("../assets/consola.ttf");
   width: 100%;
   border-top: 1px solid var(--outline);
   background-color: var(--secondary);
+  transition-duration: 0.35s;
 }
 
 #input {
@@ -58,7 +59,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100px;
+  height: 80px;
   width: 100%;
   border-bottom: 1px solid var(--outline);
   background-color: var(--secondary);
@@ -70,13 +71,13 @@ header {
   height: 50px;
   position: relative;
   left: 5px;
-  top: 50px;
+  top: 30px;
 }
 
 #run {
   position: relative;
   left: 48%;
-  top: 60px;
+  top: 40px;
   font-family: SegoeIcons;
   background-color: transparent;
   width: 30px;
@@ -89,7 +90,7 @@ header {
 #dbg {
   position: relative;
   left: 45%;
-  top: 65px;
+  top: 45px;
   font-family: SegoeIcons;
   background-color: transparent;
   width: 70px;
@@ -103,7 +104,7 @@ header {
 #refresh {
   position: relative;
   left: 46%;
-  top: 60px;
+  top: 40px;
   font-family: SegoeIcons;
   background-color: transparent;
   width: 30px;
@@ -143,7 +144,7 @@ header {
   position: fixed;
   bottom: 0px;
   left: 0px;
-  height: 95%;
+  height: 98%;
   width: 100%;
   display: block;
   font-family: Consolas, "Courier New", Courier, monospace;
@@ -155,7 +156,7 @@ header {
   
 #editor {
   position: fixed;
-  top: 100px;
+  top: 80px;
   left: 50px;
   height: 100%;
   width: 100%;
@@ -176,7 +177,7 @@ header {
   position: fixed;
   width: 20px;
   left: 0px;
-  top: 100px;
+  top: 80px;
   font-size: 12pt;
   padding-top: 10px;
   text-align: right;
@@ -195,7 +196,7 @@ header {
 
 #consol {
   position: fixed;
-  top: 110px;
+  top: 90px;
   left: 50%;
   background-color: var(--secondary);
   z-index: 10;
@@ -214,7 +215,7 @@ header {
   width: 150px;
   height: auto;
   position: fixed;
-  top: 110px;
+  top: 90px;
   left: 5px;
   background-color: var(--secondary);
   border: 1px solid var(--outline);
