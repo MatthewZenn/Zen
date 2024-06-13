@@ -86,7 +86,7 @@ document.getElementById('run').addEventListener('click', function() {
 document.getElementById('dbg').addEventListener('click', () => {
   if (check == 0) {
     consol.style.display = 'block';
-    document.getElementById('dbg').style.color = "#9e74ff";
+    document.getElementById('dbg').style.color = "var(--accent)";
     check = 1;
   }
   else {

@@ -1,4 +1,4 @@
-![logo](Zen/src/assets/logo.png)
+![logo](Mobius/www/assets/logo.png)
 # Project Mobius
 An experimental Javascript editor and terminal for mobile platforms.
 

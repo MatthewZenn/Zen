@@ -7,6 +7,7 @@
   --button: #238636;
   --secondary: #10141a;
   --font-family: Consolas;
+  --accent: rgb(43, 190, 184);
 }
 
 body, html {
@@ -67,11 +68,11 @@ header {
 }
 
 #logo {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   position: relative;
   left: 5px;
-  top: 30px;
+  top: 35px;
 }
 
 #run {
@@ -135,7 +136,7 @@ header {
   background-color: transparent;
   width: 40px;
   height: 40px;
-  color: #9e74ff;
+  color: var(--accent);
   font-size: 20pt;
   border: none;
 }
