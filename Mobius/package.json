@@ -23,7 +23,11 @@
     ],
     "plugins": {
       "cordova-plugin-statusbar": {},
-      "cordova-plugin-keyboard": {}
+      "cordova-plugin-keyboard": {},
+      "cordova-plugin-ionic-keyboard": {}
     }
+  },
+  "dependencies": {
+    "cordova-plugin-ionic-keyboard": "2.2.0"
   }
 }

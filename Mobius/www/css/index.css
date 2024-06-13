@@ -28,9 +28,9 @@ src:url("../assets/consola.ttf");
   color: var(--alt-text);
 }
 
-.command {
-  position: fixed;
-  bottom: 0;
+#command {
+  position: absolute;
+  bottom: 0px;
   left: 0;
   height: 70px;
   width: 100%;

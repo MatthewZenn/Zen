@@ -28,8 +28,17 @@ document.getElementById('send').addEventListener('click', () => {
     return
   }
 });
+
 document.getElementById('reload').addEventListener('click', () => {
   window.location.reload();
+});
+
+input.addEventListener('focus', () => {
+  document.getElementById('command').style.bottom = "310px";
+});
+
+input.addEventListener('blur', () => {
+  document.getElementById('command').style.bottom = "0px";
 });
 
 input.addEventListener("keydown", (ev) => {
