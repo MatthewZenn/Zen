@@ -5,6 +5,8 @@ const consol = document.getElementById('consol');
 
 var check = 0;
 var z = 0;
+var powermode = 0;
+var coin = 0;
 var errs = [];
 
 console.log = function(message) {
@@ -14,7 +16,7 @@ console.log = function(message) {
 document.getElementById('send').addEventListener('click', () => {
   if (input.value != '') {
     if (input.value == "cls" | input.value == "Cls") {
-      document.getElementById("status").style.color = "#30363d";
+      document.getElementById("status").style.color = "var(--status)";
       input.value = '';
       consol.value = '';
     }
@@ -24,8 +26,19 @@ document.getElementById('send').addEventListener('click', () => {
       input.focus();
     }
   }
+  else return;
+});
+
+document.getElementById("refresh").addEventListener('click', () => {
+  if (powermode == 0) {
+    editor.removeAttribute('readonly');
+    document.getElementById('refresh').style.color = "var(--accent)";
+    powermode = 1;
+  }
   else {
-    return
+    editor.setAttribute('readonly', '');
+    document.getElementById('refresh').style.color = "var(--alt-text)";
+    powermode = 0;
   }
 });
 
@@ -41,11 +54,27 @@ input.addEventListener('blur', function() {
   document.getElementById('command').style.bottom = "0px";
 });
 
+input.addEventListener('keyup', (e) => {
+  if (e.key === '(') {
+    input.value = input.value.substring(0, input.selectionStart) + ')' + input.value.substring(input.selectionEnd);
+  }
+  else if (e.key === '{') {
+    input.value = input.value.substring(0, input.selectionStart) + '}' + input.value.substring(input.selectionEnd);
+  }
+  else if (e.key === '[') {
+    input.value = input.value.substring(0, input.selectionStart) + ']' + input.value.substring(input.selectionEnd);
+  }
+  else if (e.key === '"') {
+    input.value = input.value.substring(0, input.selectionStart) + '"' + input.value.substring(input.selectionEnd);
+  }
+  else return;
+});
+
 input.addEventListener("keydown", (ev) => {
   if (ev.key === "Enter") {
     if (input.value != '') {
       if (input.value == "cls" | input.value == "Cls") {
-        document.getElementById("status").style.color = "#30363d";
+        document.getElementById("status").style.color = "var(--status)";
         input.value = '';
         consol.value = '';
       }
@@ -54,16 +83,14 @@ input.addEventListener("keydown", (ev) => {
         input.value = '';
       }
     }
-    else {
-      return
-    }
+    else return;
   }
 });
 
 document.getElementById('run').addEventListener('click', function() {
   consol.value = '';
   errs = [];
-  document.getElementById("status").style.color = "#30363d";
+  document.getElementById("status").style.color = "var(--status)";
   window.addEventListener("error", errorlog);
   eval(editor.innerHTML);
 
@@ -77,9 +104,7 @@ document.getElementById('run').addEventListener('click', function() {
       document.getElementById("consol").value += Error.message + '\n';
       document.getElementById("status").style.color = "#FF5A5A";
     }
-    else {
-      return;
-    }
+    else return;
   }
 });
 
@@ -91,7 +116,7 @@ document.getElementById('dbg').addEventListener('click', () => {
   }
   else {
     consol.style.display = 'none';
-    document.getElementById('dbg').style.color = "#848d97";
+    document.getElementById('dbg').style.color = "var(--alt-text)";
     check = 0;
   }
 });
@@ -115,11 +140,22 @@ editor.addEventListener("keydown", (event) => {
 
 document.getElementById("logo").addEventListener('click', function() {
   if (z == 0) {
-    document.getElementById("panel").style.display = "block"
+    document.getElementById("panel").style.display = "block";
     z = 1;
   }
   else {
-    document.getElementById("panel").style.display = "none"
+    document.getElementById("panel").style.display = "none";
     z = 0;
+  }
+});
+
+document.getElementById('theme').addEventListener('click', function() {
+  if (coin == 0) {
+    coin = 1;
+    document.documentElement.setAttribute('data-theme', coin);
+  }
+  else {
+    coin = 0;
+    document.documentElement.setAttribute('data-theme', coin);
   }
 });

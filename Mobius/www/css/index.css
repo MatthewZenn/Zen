@@ -2,12 +2,34 @@
   --background: #0c0f14;
   --text: #e6edf3;
   --outline: #1d252c;
+  --status: #30363d;
   --alt-text: #848d97;
-  --link: #2f81f7;
-  --button: #238636;
+
   --secondary: #10141a;
   --font-family: Consolas;
   --accent: rgb(43, 190, 184);
+}
+
+[data-theme="0"] {
+  --background: #0c0f14;
+  --text: #e6edf3;
+  --outline: #1d252c;
+  --status: #30363d;
+  --alt-text: #848d97;
+  --secondary: #10141a;
+  --font-family: Consolas;
+  --accent: rgb(43, 190, 184);
+}
+
+[data-theme="1"] {
+  --background: #ecf4ff;
+  --text: #000000;
+  --outline: #d5dce2;
+  --status: #d8dde2;
+  --alt-text: #8b8b8b;
+  --secondary: #f6faff;
+  --font-family: Consolas;
+  --accent: #2f81f7;
 }
 
 body, html {
@@ -123,7 +145,7 @@ header {
   background-color: transparent;
   width: 30px;
   height: 30px;
-  color: var(--outline);
+  color: var(--status);
   font-size: 16pt;
   border: none;
 }
